@@ -1,3 +1,4 @@
+import Puzzle
 import win
 
 print('''
@@ -22,33 +23,36 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 /______/______/______/______/______/______/______/______/______/______/_____ /
 *******************************************************************************
 ''')
+
+#Mensagem inicial
 print("Bem vindo a Ilha do Tesouro.")
-print("Sua missão é encontrar o tesouro perdido.")
+print("Sua missão é encontrar o tesouro perdido 🎁 .")
 
 
-
+#Mensagem se caso o player perder (padrão)
 gameover = "Fim de Jogo!"
 
-escolha_1 = input('Você está em um cruzamento, para onde você quer ir? Digite "Esquerda" ou "Direita".').lower()
+#Questionários
+escolha_1 = input('Você está em um cruzamento 🎆 , para onde você quer ir? Digite "Esquerda" ou "Direita".').lower()
 if escolha_1 == "esquerda":
     escolha_2 = input("Agora você está de frente com um lago e no meio do lago há uma ilha. \n"
-                      "Digite esperar para aguardar um barco ou nado para nadar até a ilha.").lower()
+                      "Digite esperar para aguardar um barco 🚢 ou nado 🏊🏼‍ para nadar até a ilha.").lower()
 
     if escolha_2 == "nado":
-        ultima_escolha = input("Nadou mais rápido que os tubarões e chegou ileso!\n"
-                               "Agora você está de frente com 3 casas; Uma amarela , uma azul e uma verde.\n"
-                               "Qual a sa escolhar?").lower()
+        ultima_escolha = input("Nadou mais rápido que os tubarões e chegou ileso! 🐟\n"
+                               "Agora você está de frente com 3 casas; 🚪 amarela , 🚪 azul e 🚪 verde.\n"
+                               "Qual a sua escolhar?").lower()
     if ultima_escolha == "amarela":
-        print(f"Sua morte poderia ser honrosa mas você escolheu a cor do medo!\n"
+        print(f"Sua morte poderia ser honrosa mas você escolheu a cor do medo! 🌌 \n"
               f"{gameover}")
 
     elif ultima_escolha == "azul":
         print("Os nobres sonham alto e você alcançou o tesouro!\n"
-              "Você venceu!\n"
-              f"{win.bebidas}")
+              "Agora encontre a chave!")
+        Puzzle.puzzle()
     elif ultima_escolha == "verde":
         print("Aqui você não encontrará a paz!\n"
-              "Você foi atacado por um urso!/\n"
+              "Você foi atacado por um urso! 🐻‍/\n"
               f"{gameover}")
 
     else:
